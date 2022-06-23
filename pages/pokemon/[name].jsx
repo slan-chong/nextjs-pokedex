@@ -38,20 +38,7 @@ const Pokemon = ({ pokemon }) => {
       },
     },
   };
-  const radarData = {
-    labels: ["HP", "Attack", "Defense", "Sp. Attack", "Sp. Def", "Speed"],
-    datasets: [
-      {
-        label: "Charmander",
-        backgroundColor: "rgba(255, 255, 153, 0.2)",
-        borderColor: "rgba(255, 255, 153, 1)",
-        pointBorderColor: "rgba(255, 255, 153, 1)",
-        pointBackgrounColor: "rgba(255, 255, 153, 1)",
-        pointRadius: 1,
-        data: [39, 52, 43, 60, 50, 65],
-      },
-    ],
-  };
+
   return (
     <Layout title={pokemon.name}>
       <div className="mx-8 px-20 flex flex-col justify-center items-center">
