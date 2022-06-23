@@ -17,15 +17,31 @@ export default function Home({ data }) {
   return (
     <div>
       <Layout title="Pokedex">
-        <h1 className="text-4xl text-center text-gold-400 py-4">
-          Nextjs Pokedex
-        </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 p-4">
           {pokemon.results.map((monster, index) => {
             return (
               <Pokemon key={index} pokemon={monster} index={index + offset} />
             );
           })}
+        </div>
+        <div className="flex flex-col">
+          <div className="flex justify-center my-2">
+            <button
+              disabled={!pokemon.previous}
+              className="disabled:bg-gray-300 disabled:cursor-default cursor-pointer p-2 mx-2 bg-red-600 rounded-l-2xl"
+              onClick={() => fetchPokemon(pokemon.previous, false)}
+            >
+              ◄
+            </button>
+            <button
+              disabled={!pokemon.next}
+              className="disabled:bg-gray-300 disabled:cursor-default cursor-pointer p-2 mx-2 bg-gray-150 text-gray-900 rounded-r-2xl"
+              onClick={() => fetchPokemon(pokemon.next, true)}
+            >
+              ►
+            </button>
+          </div>
+          <div className="flex justify-center">第{(offset + 20) / 20}頁</div>
         </div>
       </Layout>
     </div>
