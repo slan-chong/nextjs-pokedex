@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import Image from "next/image";
 import { Radar } from "react-chartjs-2";
-import { RadarOptions } from "./RadarConfig";
 import Chart from "chart.js/auto";
 const Pokemon = ({ pokemon }) => {
   const [pokeState, setPokeState] = useState({
@@ -23,6 +22,31 @@ const Pokemon = ({ pokemon }) => {
       },
     ],
   });
+  const RadarOptions = {
+    scale: {
+      r: {
+        max: 160,
+        min: 0,
+        ticks: {
+          stepSize: 40,
+          showLabelBackdrop: false,
+          backdropColor: "rgba(203, 197, 11, 1)",
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 14,
+          },
+          pointStyle: "rect",
+          usePointStyle: true,
+        },
+      },
+    },
+    font: { family: "Segoe Ui" },
+  };
 
   return (
     <Layout title={pokemon.name}>
