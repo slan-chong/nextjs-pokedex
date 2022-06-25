@@ -70,7 +70,7 @@ const Pokemon = ({ pokemon }) => {
         <div className="flex flex-col items-center mb-2">
           <p className="mb-1">
             <span className="font-bold text-gold-500">Height: </span>
-            {pokemon.height} m
+            {pokemon.height / 10} m
           </p>
           <p className="mb-1">
             <span className="font-bold text-gold-500">Weight: </span>
